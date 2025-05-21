@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ink Soul - Estúdio de Tatuagem Artística</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-gray-900 text-white">
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 bg-black bg-opacity-90 backdrop-blur-sm">
+        <div class="container mx-auto px-4 sm:px-6 py-4">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center">
+                    <i class="fas fa-spa text-3xl text-yellow-400 mr-2"></i>
+                    <a href="#" class="tattoo-font text-2xl text-white">INK SOUL</a>
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#home" class="nav-link">Home</a>
+                    <a href="#artists" class="nav-link">Artistas</a>
+                    <a href="#gallery" class="nav-link">Galeria</a>
+                    <a href="#services" class="nav-link">Serviços</a>
+                    <a href="#contact" class="nav-link">Contato</a>
+                </div>
+                <div class="md:hidden">
+                    <button id="menu-btn" class="text-white focus:outline-none">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+            <div id="mobile-menu" class="hidden md:hidden mt-4 pb-4">
+                <a href="#home" class="block py-2">Home</a>
+                <a href="#artists" class="block py-2">Artistas</a>
+                <a href="#gallery" class="block py-2">Galeria</a>
+                <a href="#services" class="block py-2">Serviços</a>
+                <a href="#contact" class="block py-2">Contato</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-bg min-h-screen flex items-center pt-20">
+        <div class="container mx-auto px-4 sm:px-6">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-12 md:mb-0">
+                    <h1 class="text-4xl md:text-6xl font-bold mb-6 tattoo-font">
+                        <span class="text-yellow-400">Transforme</span> sua pele em arte
+                    </h1>
+                    <p class="text-xl mb-8 text-gray-300">
+                        No Ink Soul, cada tatuagem conta uma história única. Nossos artistas especializados criam obras de arte personalizadas que refletem sua essência.
+                    </p>
+                    <div class="flex flex-wrap gap-4">
+                        <a href="#contact" class="bg-yellow-500 hover:bg-yellow-600 text-black font-bold py-3 px-6 rounded-full transition duration-300 transform hover:scale-105">
+                            Agende sua sessão
+                        </a>
+                        <a href="#gallery" class="border-2 border-white hover:border-yellow-500 text-white font-bold py-3 px-6 rounded-full transition duration-300 transform hover:scale-105">
+                            Veja nosso trabalho
+                        </a>
+                    </div>
+                </div>
+                <div class="md:w-1/2 relative">
+                    <img src="https://images.unsplash.com/photo-1613082293061-3c03a2c6d1b7?ixlib=rb-4.0.3&auto=format&fit=crop&w=687&q=80" alt="Tattoo artist at work" class="rounded-lg shadow-2xl w-full max-w-md mx-auto floating">
+                    <div class="absolute -bottom-5 -right-5 bg-yellow-500 text-black p-4 rounded-lg shadow-lg hidden md:block">
+                        <p class="font-bold">+15 anos</p>
+                        <p class="text-sm">de experiência</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Artists Section -->
+<section id="artists" class="py-20 bg-gray-800">
+    <div class="container mx-auto px-4 sm:px-6">
+        <div class="text-center mb-16">
+            <h2 class="text-3xl md:text-4xl font-bold mb-4 tattoo-font">Nosso <span class="text-yellow-400">Artista</span></h2>
+            <p class="max-w-2xl mx-auto text-gray-300">
+                Conheça o talentoso profissional por trás de cada obra de arte. Com um estilo único e anos de experiência.
+            </p>
+        </div>
+        <div class="grid grid-cols-1 gap-10">
+            <div class="bg-gray-900 rounded-xl overflow-hidden shadow-xl transition duration-500 hover:shadow-2xl mx-auto max-w-md">
+                <div class="relative">
+                    <img src="https://images.unsplash.com/photo-1580489944761-15a05d5e914d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80" alt="Artist 1" class="w-full h-80 object-cover">
+                    <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black to-transparent p-4">
+                        <h3 class="text-xl font-bold">Ana "Raven" Silva</h3>
+                        <p class="text-yellow-400">Realismo & Retratos</p>
+                    </div>
+                </div>
+                <div class="p-6">
+                    <p class="text-gray-300 mb-4">Especialista em retratos hiper-realistas e tatuagens em preto e cinza.</p>
+                    <div class="flex space-x-2">
+                        <span class="bg-gray-700 px-3 py-1 rounded-full text-sm">12 anos exp.</span>
+                        <span class="bg-gray-700 px-3 py-1 rounded-full text-sm">Prêmios internacionais</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="py-20 bg-gray-900">
+        <div class="container mx-auto px-4 sm:px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4 tattoo-font">Nossa <span class="text-yellow-400">Galeria</span></h2>
+                <p class="max-w-2xl mx-auto text-gray-300">Explore nosso portfólio de trabalhos únicos.</p>
+                <div class="flex flex-wrap justify-center mt-8 gap-4">
+                    <button class="filter-btn active px-4 py-2 rounded-full bg-yellow-500 text-black font-bold" data-filter="all">Todos</button>
+                    <button class="filter-btn px-4 py-2 rounded-full border border-white hover:bg-yellow-500 hover:text-black hover:border-yellow-500 transition" data-filter="realism">Realismo</button>
+                    <button class="filter-btn px-4 py-2 rounded-full border border-white hover:bg-yellow-500 hover:text-black hover:border-yellow-500 transition" data-filter="tribal">Tribal</button>
+                    <button class="filter-btn px-4 py-2 rounded-full border border-white hover:bg-yellow-500 hover:text-black hover:border-yellow-500 transition" data-filter="dotwork">Pontilhismo</button>
+                </div>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 gallery-container"></div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-20 bg-gray-800">
+        <div class="container mx-auto px-4 sm:px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4 tattoo-font">Nossos <span class="text-yellow-400">Serviços</span></h2>
+                <p class="max-w-2xl mx-auto text-gray-300">Serviços para todas as suas necessidades de body art.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-gray-900 p-8 rounded-xl shadow-lg hover:shadow-2xl transition duration-500">
+                    <div class="text-yellow-400 text-4xl mb-4">
+                        <i class="fas fa-paint-brush"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Tatuagem Personalizada</h3>
+                    <p class="text-gray-300 mb-4">Crie uma peça única com nossos artistas.</p>
+                    <div class="flex items-center text-yellow-400">
+                        <span class="font-bold mr-2">A partir de R$ 300</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </div>
+                </div>
+                <div class="bg-gray-900 p-8 rounded-xl shadow-lg hover:shadow-2xl transition duration-500">
+                    <div class="text-yellow-400 text-4xl mb-4">
+                        <i class="fas fa-eraser"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Remoção a Laser</h3>
+                    <p class="text-gray-300 mb-4">Tecnologia de ponta para remover tatuagens.</p>
+                    <div class="flex items-center text-yellow-400">
+                        <span class="font-bold mr-2">A partir de R$ 500</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </div>
+                </div>
+                <div class="bg-gray-900 p-8 rounded-xl shadow-lg hover:shadow-2xl transition duration-500">
+                    <div class="text-yellow-400 text-4xl mb-4">
+                        <i class="fas fa-magic"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Cover-up</h3>
+                    <p class="text-gray-300 mb-4">Transforme tatuagens antigas em novas obras.</p>
+                    <div class="flex items-center text-yellow-400">
+                        <span class="font-bold mr-2">A partir de R$ 400</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-12 bg-gradient-to-r from-yellow-500 to-red-500 p-1 rounded-xl max-w-4xl mx-auto">
+                <div class="bg-gray-900 rounded-lg p-8 text-center">
+                    <h3 class="text-2xl font-bold mb-4">Primeira Tatuagem?</h3>
+                    <p class="text-gray-300 mb-6">Pacote especial para iniciantes com consultoria gratuita.</p>
+                    <a href="#contact" class="bg-gradient-to-r from-yellow-500 to-red-500 text-black font-bold py-3 px-6 rounded-full inline-block hover:opacity-90 transition">Saiba Mais</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="py-20 bg-gray-900">
+        <div class="container mx-auto px-4 sm:px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4 tattoo-font">O que dizem <span class="text-yellow-400">nossos clientes</span></h2>
+                <p class="max-w-2xl mx-auto text-gray-300">A satisfação dos nossos clientes é nossa maior recompensa.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-gray-800 p-8 rounded-xl relative">
+                    <div class="absolute -top-4 -left-4 text-yellow-400 text-5xl">
+                        <i class="fas fa-quote-left"></i>
+                    </div>
+                    <p class="text-gray-300 mb-6 italic">"A Ana fez um retrato incrível do meu pai. O estúdio é impecável!"</p>
+                    <div class="flex items-center">
+                        <img src="https://randomuser.me/api/portraits/women/32.jpg" alt="Client 1" class="w-12 h-12 rounded-full mr-4">
+                        <div>
+                            <h4 class="font-bold">Mariana Costa</h4>
+                            <p class="text-yellow-400 text-sm">Realismo no braço</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-gray-800 p-8 rounded-xl relative">
+                    <div class="absolute -top-4 -left-4 text-yellow-400 text-5xl">
+                        <i class="fas fa-quote-left"></i>
+                    </div>
+                    <p class="text-gray-300 mb-6 italic">"Carlos fez a tatuagem tribal que sempre quis. Incrível!"</p>
+                    <div class="flex items-center">
+                        <img src="https://randomuser.me/api/portraits/men/75.jpg" alt="Client 2" class="w-12 h-12 rounded-full mr-4">
+                        <div>
+                            <h4 class="font-bold">Ricardo Almeida</h4>
+                            <p class="text-yellow-400 text-sm">Tribal nas costas</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-gray-800 p-8 rounded-xl relative">
+                    <div class="absolute -top-4 -left-4 text-yellow-400 text-5xl">
+                        <i class="fas fa-quote-left"></i>
+                    </div>
+                    <p class="text-gray-300 mb-6 italic">"Lúcia transformou minha cicatriz em arte. Recomendo!"</p>
+                    <div class="flex items-center">
+                        <img src="https://randomuser.me/api/portraits/women/63.jpg" alt="Client 3" class="w-12 h-12 rounded-full mr-4">
+                        <div>
+                            <h4 class="font-bold">Fernanda Rocha</h4>
+                            <p class="text-yellow-400 text-sm">Pontilhismo no ombro</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact & Booking Section -->
+    <section id="contact" class="py-20 bg-gray-800">
+        <div class="container mx-auto px-4 sm:px-6">
+            <div class="flex flex-col lg:flex-row gap-12">
+                <div class="lg:w-1/2">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-6 tattoo-font">Agende sua <span class="text-yellow-400">Tatuagem</span></h2>
+                    <p class="text-gray-300 mb-8">Preencha o formulário para agendar sua consulta ou sessão.</p>
+                    <form class="booking-form space-y-6">
+                        <div>
+                            <label for="name" class="block mb-2 text-gray-300">Nome Completo</label>
+                            <input type="text" id="name" class="w-full px-4 py-3 rounded-lg text-white placeholder-gray-400" placeholder="Seu nome" required>
+                        </div>
+                        <div>
+                            <label for="email" class="block mb-2 text-gray-300">Email</label>
+                            <input type="email" id="email" class="w-full px-4 py-3 rounded-lg text-white placeholder-gray-400" placeholder="seu@email.com" required>
+                        </div>
+                        <div>
+                            <label for="phone" class="block mb-2 text-gray-300">Telefone</label>
+                            <input type="tel" id="phone" class="w-full px-4 py-3 rounded-lg text-white placeholder-gray-400" placeholder="(00) 00000-0000" required>
+                        </div>
+                        
+                        <div>
+                            <label for="style" class="block mb-2 text-gray-300">Estilo de Tatuagem</label>
+                            <select id="style" class="w-full px-4 py-3 rounded-lg text-black">
+                                <option value="">Selecione um estilo</option>
+                                <option value="realism">Realismo</option>
+                                <option value="tribal">Tribal/Maori</option>
+                                <option value="dotwork">Pontilhismo</option>
+                                <option value="watercolor">Aquarela</option>
+                                <option value="traditional">Tradicional</option>
+                                <option value="other">Outro</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label for="message" class="block mb-2 text-gray-300">Descreva sua ideia</label>
+                            <textarea id="message" rows="4" class="w-full px-4 py-3 rounded-lg text-white placeholder-gray-400" placeholder="Descreva sua ideia de tatuagem..."></textarea>
+                        </div>
+                        <button type="submit" class="w-full bg-yellow-500 hover:bg-yellow-600 text-black font-bold py-3 px-6 rounded-lg transition duration-300">Enviar Agendamento</button>
+                    </form>
+                </div>
+                <div class="lg:w-1/2">
+                    <div class="bg-gray-900 p-8 rounded-xl h-full">
+                        <h3 class="text-2xl font-bold mb-6 tattoo-font">Nossas <span class="text-yellow-400">Informações</span></h3>
+                        <div class="space-y-6">
+                            <div class="flex items-start">
+                                <div class="text-yellow-400 text-xl mr-4 mt-1">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold mb-2">Endereço</h4>
+                                    <p class="text-gray-300">Rua da Tinta, 123 - Centro, São Paulo - SP</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="text-yellow-400 text-xl mr-4 mt-1">
+                                    <i class="fas fa-clock"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold mb-2">Horário de Funcionamento</h4>
+                                    <p class="text-gray-300">Segunda a Sexta: 10h - 20h<br>Sábado: 10h - 18h<br>Domingo: Fechado</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="text-yellow-400 text-xl mr-4 mt-1">
+                                    <i class="fas fa-phone-alt"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold mb-2">Telefone</h4>
+                                    <p class="text-gray-300">(11) 98765-4321<br>(11) 1234-5678</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="text-yellow-400 text-xl mr-4 mt-1">
+                                    <i class="fas fa-envelope"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold mb-2">Email</h4>
+                                    <p class="text-gray-300">contato@inksoul.com.br</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mt-12">
+                            <h4 class="font-bold mb-4">Siga-nos nas redes sociais</h4>
+                            <div class="flex space-x-4">
+                                <a href="#" class="bg-gray-700 hover:bg-blue-600 text-white w-10 h-10 rounded-full flex items-center justify-center transition">
+                                    <i class="fab fa-facebook-f"></i>
+                                </a>
+                                <a href="#" class="bg-gray-700 hover:bg-pink-600 text-white w-10 h-10 rounded-full flex items-center justify-center transition">
+                                    <i class="fab fa-instagram"></i>
+                                </a>
+                                <a href="#" class="bg-gray-700 hover:bg-blue-400 text-white w-10 h-10 rounded-full flex items-center justify-center transition">
+                                    <i class="fab fa-twitter"></i>
+                                </a>
+                                <a href="#" class="bg-gray-700 hover:bg-red-600 text-white w-10 h-10 rounded-full flex items-center justify-center transition">
+                                    <i class="fab fa-youtube"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="mt-12 bg-gradient-to-r from-yellow-500 to-red-500 p-1 rounded-xl faq-container">
+                            <div class="bg-gray-800 rounded-lg p-6">
+                                <h4 class="font-bold mb-3">Dúvidas Frequentes</h4>
+                                <div class="space-y-3">
+                                    <div class="border-b border-gray-700 pb-3">
+                                        <button class="faq-btn w-full text-left flex justify-between items-center" aria-expanded="false" aria-controls="faq-content-1">
+                                            <span>Quanto custa uma tatuagem?</span>
+                                            <i class="fas fa-chevron-down text-yellow-400 transition-transform duration-300"></i>
+                                        </button>
+                                        <div class="faq-content hidden mt-2 text-gray-300 text-sm" id="faq-content-1">
+                                            O valor varia conforme tamanho, complexidade e tempo necessário. Consultas são gratuitas.
+                                        </div>
+                                    </div>
+                                    <div class="border-b border-gray-700 pb-3">
+                                        <button class="faq-btn w-full text-left flex justify-between items-center" aria-expanded="false" aria-controls="faq-content-2">
+                                            <span>Quais os cuidados pós-tatuagem?</span>
+                                            <i class="fas fa-chevron-down text-yellow-400 transition-transform duration-300"></i>
+                                        </button>
+                                        <div class="faq-content hidden mt-2 text-gray-300 text-sm" id="faq-content-2">
+                                            Mantenha limpo, hidratado e protegido do sol por 15 dias. Fornecemos instruções detalhadas.
+                                        </div>
+                                    </div>
+                                    <div class="border-b border-gray-700 pb-3">
+                                        <button class="faq-btn w-full text-left flex justify-between items-center" aria-expanded="false" aria-controls="faq-content-3">
+                                            <span>É possível fazer anestesia?</span>
+                                            <i class="fas fa-chevron-down text-yellow-400 transition-transform duration-300"></i>
+                                        </button>
+                                        <div class="faq-content hidden mt-2 text-gray-300 text-sm" id="faq-content-3">
+                                            Usamos creme anestésico tópico para áreas sensíveis.
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black py-12">
+        <div class="container mx-auto px-4 sm:px-6">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="flex items-center mb-6 md:mb-0">
+                    <i class="fas fa-spa text-3xl text-yellow-400 mr-2"></i>
+                    <a href="#" class="tattoo-font text-2xl text-white">INK SOUL</a>
+                </div>
+                <div class="flex flex-wrap justify-center gap-6 mb-6 md:mb-0">
+                    <a href="#home" class="text-gray-400 hover:text-yellow-400 transition">Home</a>
+                    <a href="#artists" class="text-gray-400 hover:text-yellow-400 transition">Artistas</a>
+                    <a href="#gallery" class="text-gray-400 hover:text-yellow-400 transition">Galeria</a>
+                    <a href="#services" class="text-gray-400 hover:text-yellow-400 transition">Serviços</a>
+                    <a href="#contact" class="text-gray-400 hover:text-yellow-400 transition">Contato</a>
+                    <a href="#" class="text-gray-400 hover:text-yellow-400 transition">Política de Privacidade</a>
+                </div>
+                <div class="flex space-x-4">
+                    <a href="https://www.instagram.com/lucas.fullstack/" class="text-gray-400 hover:text-yellow-400 transition">
+                        <i class="fab fa-instagram text-xl"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-yellow-400 transition">
+                        <i class="fab fa-facebook-f text-xl"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-yellow-400 transition">
+                        <i class="fab fa-whatsapp text-xl"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-500">
+                <p>© 2023 Ink Soul Tattoo Studio. Todos os direitos reservados.</p>
+                <p class="mt-2 text-sm">Desenvolvido com <i class="fas fa-heart text-red-500"></i> para amantes da arte corporal</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" class="fixed bottom-8 right-8 bg-yellow-500 text-black w-12 h-12 rounded-full flex items-center justify-center shadow-lg transition opacity-0 invisible hover:bg-yellow-600">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- Booking Success Modal -->
+    <div id="success-modal" class="fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center z-50 hidden">
+        <div class="bg-gray-900 rounded-xl p-8 max-w-md w-full mx-4 relative">
+            <button id="close-modal" class="absolute top-4 right-4 text-gray-400 hover:text-white">
+                <i class="fas fa-times text-xl"></i>
+            </button>
+            <div class="text-center">
+                <div class="text-green-500 text-6xl mb-4">
+                    <i class="fas fa-check-circle"></i>
+                </div>
+                <h3 class="text-2xl font-bold mb-2">Agendamento Enviado!</h3>
+                <p class="text-gray-300 mb-6">Entraremos em contato em até 24 horas para confirmar os detalhes.</p>
+                <button id="modal-ok" class="bg-yellow-500 hover:bg-yellow-600 text-black font-bold py-2 px-6 rounded-lg transition">OK</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="scripts.js"></script>
+</body>
+</html>

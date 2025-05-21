@@ -1,0 +1,209 @@
+@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Roboto:wght@300;400;700&display=swap');
+
+:root {
+    --primary: #1a1a2e;
+    --secondary: #16213e;
+    --accent: #f8bb22;
+    --light: #e94560;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    scroll-behavior: smooth;
+    background-color: #111827; /* Tailwind bg-gray-900 como fallback */
+}
+
+.hero-bg {
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1605649487212-47bdab064df7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60');
+    background-size: cover;
+    background-position: center;
+    min-height: 100vh; /* Mantém altura total, ajustada abaixo */
+}
+
+.tattoo-font {
+    font-family: 'Permanent Marker', cursive;
+    font-size: 2rem;
+}
+
+.gallery-item {
+    transition: all 0.3s ease;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: auto;
+}
+
+.gallery-item:hover {
+    transform: scale(1.03);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+.floating {
+    animation: floating 3s ease-in-out infinite;
+}
+
+@keyframes floating {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-1rem); }
+    100% { transform: translateY(0); }
+}
+
+.nav-link {
+    position: relative;
+    font-size: 1rem;
+    color: #ffffff; /* Garante cor consistente com Tailwind */
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -5px;
+    left: 0;
+    background-color: var(--accent);
+    transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+#mobile-menu a {
+    position: relative;
+    font-size: 1rem;
+    color: #ffffff;
+}
+
+#mobile-menu a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -2px;
+    left: 0;
+    background-color: var(--accent);
+    transition: width 0.3s ease;
+}
+
+#mobile-menu a:hover::after {
+    width: 100%;
+}
+
+.booking-form {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+.booking-form input, 
+.booking-form textarea, 
+.booking-form select {
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    width: 100%;
+    box-sizing: border-box;
+    margin-bottom: 1rem;
+    font-size: 1rem;
+    padding: 0.75rem;
+    border-radius: 0.5rem; /* Alinha com Tailwind */
+}
+
+.booking-form input:focus, 
+.booking-form textarea:focus, 
+.booking-form select:focus {
+    outline: none;
+    border-color: var(--accent);
+}
+
+/* Responsividade */
+@media (max-width: 1024px) {
+    .hero-bg {
+        min-height: 80vh; /* Reduz altura em tablets */
+        background-position: top;
+    }
+
+    .tattoo-font {
+        font-size: 1.5rem;
+    }
+
+    .hero-bg h1 {
+        font-size: 2.5rem; /* Ajusta título em tablets */
+    }
+
+    .gallery-item:hover {
+        transform: none;
+        box-shadow: none;
+    }
+
+    .nav-link, #mobile-menu a {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-bg {
+        background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1605649487212-47bdab064df7?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60');
+        min-height: 70vh; /* Reduz altura em mobile */
+    }
+
+    .hero-bg img {
+        max-width: 80%; /* Evita que a imagem saia dos limites */
+    }
+
+    .hero-bg .absolute {
+        display: none; /* Garante que o badge não cause problemas */
+    }
+
+    #mobile-menu {
+        display: none; /* Controlado por JS, mas garantimos estado inicial */
+    }
+
+    #mobile-menu.active {
+        display: block; /* Para quando o menu for ativado via JS */
+    }
+
+    #mobile-menu a {
+        display: block;
+        padding: 0.5rem 0;
+    }
+
+    .booking-form input, 
+    .booking-form textarea, 
+    .booking-form select {
+        font-size: 0.9rem;
+        padding: 0.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-bg {
+        background-attachment: scroll;
+        min-height: 60vh;
+    }
+
+    .hero-bg h1 {
+        font-size: 2rem; /* Título menor em mobile */
+    }
+
+    .hero-bg p {
+        font-size: 1rem; /* Texto menor em mobile */
+    }
+
+    .floating {
+        animation: none; /* Desativa animação em mobile */
+    }
+
+    .tattoo-font {
+        font-size: 1.25rem;
+    }
+
+    .gallery-container img {
+        width: 100%; /* Garante que imagens da galeria sejam responsivas */
+        height: auto;
+    }
+}
+.rotate-180 {
+    transform: rotate(180deg);
+}
