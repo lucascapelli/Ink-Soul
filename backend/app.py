@@ -18,11 +18,13 @@ TO_EMAIL = os.getenv('EMAIL')           # o email que vai receber (você mesmo)
 @app.route('/send-email', methods=['POST'])
 def send_email():
     data = request.json
-    name = data.get('name')
-    email = data.get('email')
-    phone = data.get('phone')
-    style = data.get('style')
-    message = data.get('message')
+    print("Dados recebidos:", data)
+
+    name = data.get('name') or ''
+    email = data.get('email') or ''
+    phone = data.get('phone') or ''
+    style = data.get('style') or ''
+    message = data.get('message') or ''
 
     try:
         msg = MIMEMultipart()
