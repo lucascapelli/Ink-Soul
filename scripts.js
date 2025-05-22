@@ -35,9 +35,38 @@ document.addEventListener('DOMContentLoaded', () => {
     const closeModal = document.getElementById('close-modal');
     const modalOk = document.getElementById('modal-ok');
 
-    form.addEventListener('submit', (e) => {
+    form.addEventListener('submit', async (e) => {
         e.preventDefault();
-        modal.classList.remove('hidden');
+
+        const data = {
+            name: document.getElementById('name').value,
+            email: document.getElementById('email').value,
+            phone: document.getElementById('phone').value,
+            style: document.getElementById('style').value,
+            message: document.getElementById('message').value,
+        };
+
+        try {
+        const response = await fetch('http://127.0.0.1:5000/send-email', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(data),
+            });
+
+            const result = await response.json();
+
+            if (result.success) {
+                modal.classList.remove('hidden');
+                form.reset();
+            } else {
+                alert('Erro ao enviar o agendamento. Tente novamente.');
+            }
+        } catch (error) {
+            console.error('Erro:', error);
+            alert('Erro na conexão. Tente novamente mais tarde.');
+        }
     });
 
     closeModal.addEventListener('click', () => {
