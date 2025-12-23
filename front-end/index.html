@@ -1,0 +1,1095 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Ink Soul - Estúdio de tatuagem artística com foco em designs únicos e personalizados. Transforme sua história em arte na pele.">
+    <meta name="keywords" content="tatuagem, estúdio, arte, ink soul, tatuador, tattoo">
+    <title>Ink Soul - Estúdio de Tatuagem Artística Premium</title>
+
+    <!-- Preload critical resources -->
+    <link rel="preload"
+        href="https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Roboto:wght@300;400;700;900&family=Playfair+Display:wght@400;700&display=swap"
+        as="style">
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#0f0f1a',
+                        secondary: '#1a1a2e',
+                        accent: '#ffcc00',
+                        'accent-light': '#ffdb4d',
+                        light: '#e94560',
+                    },
+                    animation: {
+                        'float-slow': 'float 6s ease-in-out infinite',
+                        'pulse-slow': 'pulse 3s ease-in-out infinite',
+                        'shine': 'shine 3s infinite',
+                    },
+                    backgroundImage: {
+                        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
+                        'gradient-conic': 'conic-gradient(var(--tw-gradient-stops))',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+</head>
+
+<body class="bg-primary text-white">
+    <!-- Progress Bar -->
+    <div class="progress-bar" id="progress-bar"></div>
+
+    <!-- Particle Background -->
+    <div id="particles-js"></div>
+
+    <!-- Navigation -->
+    <nav class="nav-glass fixed w-full z-50 py-4 transition-all duration-300">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center space-x-3 group cursor-pointer">
+                    <div class="relative">
+                        <div
+                            class="w-10 h-10 bg-gradient-to-br from-accent to-light rounded-full flex items-center justify-center transform group-hover:rotate-180 transition-transform duration-500">
+                            <i class="fas fa-spa text-lg text-primary"></i>
+                        </div>
+                        <div
+                            class="absolute -inset-1 bg-accent rounded-full opacity-20 blur group-hover:opacity-30 transition-opacity duration-500">
+                        </div>
+                    </div>
+                    <a href="#" class="tattoo-font text-2xl elegant-font gradient-text">INK SOUL</a>
+                </div>
+
+                <!-- Desktop Menu -->
+                <div class="hidden lg:flex items-center space-x-8">
+                    <a href="#home" class="nav-link relative px-3 py-2 group">
+                        <span class="relative z-10">Home</span>
+                        <div
+                            class="absolute inset-0 bg-gradient-to-r from-accent/10 to-light/10 rounded-lg scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-300">
+                        </div>
+                    </a>
+                    <a href="#artists" class="nav-link relative px-3 py-2 group">
+                        <span class="relative z-10">Artistas</span>
+                        <div
+                            class="absolute inset-0 bg-gradient-to-r from-accent/10 to-light/10 rounded-lg scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-300">
+                        </div>
+                    </a>
+                    <a href="#gallery" class="nav-link relative px-3 py-2 group">
+                        <span class="relative z-10">Galeria</span>
+                        <div
+                            class="absolute inset-0 bg-gradient-to-r from-accent/10 to-light/10 rounded-lg scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-300">
+                        </div>
+                    </a>
+                    <a href="#services" class="nav-link relative px-3 py-2 group">
+                        <span class="relative z-10">Serviços</span>
+                        <div
+                            class="absolute inset-0 bg-gradient-to-r from-accent/10 to-light/10 rounded-lg scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-300">
+                        </div>
+                    </a>
+                    <a href="#contact" class="nav-link relative px-3 py-2 group">
+                        <span class="relative z-10">Contato</span>
+                        <div
+                            class="absolute inset-0 bg-gradient-to-r from-accent/10 to-light/10 rounded-lg scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-300">
+                        </div>
+                    </a>
+                    <a href="#contact"
+                        class="bg-gradient-to-r from-accent to-accent-light text-primary font-bold py-2 px-6 rounded-full hover-lift hover:shadow-lg transition-all duration-300">
+                        <i class="fas fa-calendar-alt mr-2"></i>Agendar
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button id="menu-btn" class="lg:hidden text-white p-2 rounded-lg hover:bg-secondary transition-colors">
+                    <i class="fas fa-bars text-xl"></i>
+                </button>
+            </div>
+
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class="lg:hidden mt-4 hidden bg-secondary/50 backdrop-blur-sm rounded-xl p-4">
+                <div class="space-y-3">
+                    <a href="#home" class="block py-3 px-4 rounded-lg hover:bg-white/5 transition-colors">
+                        <i class="fas fa-home mr-3 text-accent"></i>Home
+                    </a>
+                    <a href="#artists" class="block py-3 px-4 rounded-lg hover:bg-white/5 transition-colors">
+                        <i class="fas fa-paint-brush mr-3 text-accent"></i>Artistas
+                    </a>
+                    <a href="#gallery" class="block py-3 px-4 rounded-lg hover:bg-white/5 transition-colors">
+                        <i class="fas fa-images mr-3 text-accent"></i>Galeria
+                    </a>
+                    <a href="#services" class="block py-3 px-4 rounded-lg hover:bg-white/5 transition-colors">
+                        <i class="fas fa-concierge-bell mr-3 text-accent"></i>Serviços
+                    </a>
+                    <a href="#contact" class="block py-3 px-4 rounded-lg hover:bg-white/5 transition-colors">
+                        <i class="fas fa-envelope mr-3 text-accent"></i>Contato
+                    </a>
+                    <a href="#contact"
+                        class="block bg-gradient-to-r from-accent to-accent-light text-primary font-bold py-3 px-4 rounded-lg text-center mt-2">
+                        Agendar Sessão
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-bg min-h-screen flex items-center pt-16 relative overflow-hidden">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div class="hero-content fade-in-up">
+                    <div
+                        class="inline-flex items-center space-x-2 bg-secondary/50 backdrop-blur-sm px-4 py-2 rounded-full mb-6">
+                        <div class="w-2 h-2 bg-accent rounded-full animate-pulse"></div>
+                        <span class="text-sm">Estúdio Premium de Tatuagem</span>
+                    </div>
+
+                    <h1 class="text-5xl md:text-7xl font-bold mb-6 elegant-font">
+                        <span class="text-white">Arte que</span>
+                        <span class="block text-glow gradient-text">Fica para Sempre</span>
+                    </h1>
+
+                    <p class="text-xl text-text-muted mb-8 max-w-2xl">
+                        No Ink Soul, transformamos suas histórias em obras de arte únicas na pele. Cada traço é uma
+                        expressão, cada cor uma emoção. Seja parte da nossa arte.
+                    </p>
+
+                    <div class="flex flex-wrap gap-4">
+                        <a href="#contact"
+                            class="bg-gradient-to-r from-accent to-accent-light text-primary font-bold py-4 px-8 rounded-full hover-lift btn-glow transition-all duration-300 transform hover:scale-105">
+                            <i class="fas fa-calendar-check mr-2"></i>Agende sua Consulta
+                        </a>
+                        <a href="#gallery"
+                            class="border-2 border-white/20 hover:border-accent text-white font-bold py-4 px-8 rounded-full hover-lift transition-all duration-300 backdrop-blur-sm">
+                            <i class="fas fa-play mr-2"></i>Ver Trabalhos
+                        </a>
+                    </div>
+
+                    <div class="mt-12 grid grid-cols-3 gap-8">
+                        <div class="text-center">
+                            <div class="text-4xl font-bold text-accent mb-2 counter" data-target="1500">0</div>
+                            <div class="text-text-muted">Tatuagens Realizadas</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-4xl font-bold text-accent mb-2 counter" data-target="15">0</div>
+                            <div class="text-text-muted">Anos de Experiência</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-4xl font-bold text-accent mb-2 counter" data-target="98">0</div>
+                            <div class="text-text-muted">Clientes Satisfeitos</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="relative">
+                    <div class="relative floating">
+                        <div
+                            class="absolute -top-6 -left-6 w-24 h-24 bg-gradient-to-br from-accent/20 to-light/20 rounded-full blur-xl">
+                        </div>
+                        <div
+                            class="absolute -bottom-6 -right-6 w-32 h-32 bg-gradient-to-br from-light/20 to-accent/20 rounded-full blur-xl">
+                        </div>
+
+                        <div class="bg-gradient-to-br from-secondary to-primary p-1 rounded-2xl shadow-2xl">
+                            <img src="https://images.unsplash.com/photo-1605649487212-47bdab064df7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                                alt="Artista trabalhando" class="rounded-2xl w-full h-auto">
+                        </div>
+                    </div>
+
+                    <div
+                        class="absolute bottom-8 -right-4 bg-gradient-to-br from-accent to-accent-light text-primary p-4 rounded-xl shadow-2xl floating-delayed">
+                        <div class="text-center">
+                            <div class="text-2xl font-bold">+15 anos</div>
+                            <div class="text-sm">de excelência</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Scroll Indicator -->
+        <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+            <a href="#artists" class="text-accent">
+                <i class="fas fa-chevron-down text-2xl"></i>
+            </a>
+        </div>
+    </section>
+
+    <!-- Artists Section -->
+    <section id="artists" class="py-20 bg-gradient-to-b from-primary to-secondary relative overflow-hidden reveal">
+        <div class="absolute top-0 left-0 w-64 h-64 bg-gradient-to-br from-accent/5 to-light/5 rounded-full blur-3xl">
+        </div>
+        <div
+            class="absolute bottom-0 right-0 w-96 h-96 bg-gradient-to-br from-light/5 to-accent/5 rounded-full blur-3xl">
+        </div>
+
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center mb-16">
+                <div class="inline-flex items-center space-x-2 mb-4">
+                    <div class="w-12 h-px bg-gradient-to-r from-transparent via-accent to-transparent"></div>
+                    <span class="text-accent uppercase tracking-widest text-sm">Nossa Equipe</span>
+                    <div class="w-12 h-px bg-gradient-to-r from-transparent via-accent to-transparent"></div>
+                </div>
+                <h2 class="text-4xl md:text-5xl font-bold mb-6 elegant-font">
+                    Mestres da <span class="gradient-text">Arte na Pele</span>
+                </h2>
+                <p class="max-w-2xl mx-auto text-text-muted text-lg">
+                    Conheça os artistas que transformam ideias em realidade. Cada um com seu estilo único e anos de
+                    dedicação à arte.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Artist 1 -->
+                <div class="artist-card rounded-2xl p-6 hover-lift transform transition-all duration-500">
+                    <div class="relative mb-6 overflow-hidden rounded-xl">
+                        <img src="imgs/tatuador1.jpg"
+                            alt="Ana Silva"
+                            class="w-full h-64 object-cover transform hover:scale-110 transition-transform duration-700">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                        <div class="absolute bottom-4 left-4">
+                            <h3 class="text-2xl font-bold">Ana "Raven" Silva</h3>
+                            <p class="text-accent">Realismo & Retratos</p>
+                        </div>
+                    </div>
+                    <p class="text-text-muted mb-4">
+                        Especialista em retratos hiper-realistas e tatuagens em preto e cinza. Premiada
+                        internacionalmente por seu trabalho detalhista.
+                    </p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1 bg-secondary rounded-full text-sm">12 anos exp.</span>
+                        <span class="px-3 py-1 bg-secondary rounded-full text-sm">Realismo</span>
+                        <span class="px-3 py-1 bg-secondary rounded-full text-sm">Retratos</span>
+                    </div>
+                    <div class="mt-6 flex items-center justify-between">
+                        <a href="#contact" class="text-accent hover:text-accent-light transition-colors">
+                            <i class="fas fa-calendar-alt mr-2"></i>Agendar
+                        </a>
+                        <div class="flex space-x-3">
+                            <a href="#" class="text-text-muted hover:text-accent transition-colors">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <a href="#" class="text-text-muted hover:text-accent transition-colors">
+                                <i class="fab fa-behance"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Artist 2 -->
+                <div class="artist-card rounded-2xl p-6 hover-lift transform transition-all duration-500">
+                    <div class="relative mb-6 overflow-hidden rounded-xl">
+                        <img src="imgs/tatuador2.jpg"
+                            alt="Carlos Mendes"
+                            class="w-full h-64 object-cover transform hover:scale-110 transition-transform duration-700">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                        <div class="absolute bottom-4 left-4">
+                            <h3 class="text-2xl font-bold">Carlos "Koi" Mendes</h3>
+                            <p class="text-accent">Tribal & Maori</p>
+                        </div>
+                    </div>
+                    <p class="text-text-muted mb-4">
+                        Mestre em designs tribais e padrões geométricos. Trabalha com técnicas tradicionais e modernas
+                        para criar peças únicas.
+                    </p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1 bg-secondary rounded-full text-sm">8 anos exp.</span>
+                        <span class="px-3 py-1 bg-secondary rounded-full text-sm">Tribal</span>
+                        <span class="px-3 py-1 bg-secondary rounded-full text-sm">Geométrico</span>
+                    </div>
+                    <div class="mt-6 flex items-center justify-between">
+                        <a href="#contact" class="text-accent hover:text-accent-light transition-colors">
+                            <i class="fas fa-calendar-alt mr-2"></i>Agendar
+                        </a>
+                        <div class="flex space-x-3">
+                            <a href="#" class="text-text-muted hover:text-accent transition-colors">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <a href="#" class="text-text-muted hover:text-accent transition-colors">
+                                <i class="fab fa-behance"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Artist 3 -->
+                <div class="artist-card rounded-2xl p-6 hover-lift transform transition-all duration-500">
+                    <div class="relative mb-6 overflow-hidden rounded-xl">
+                        <img src="imgs/tatuador3.jpg"
+                            alt="Lucia Santos"
+                            class="w-full h-64 object-cover transform hover:scale-110 transition-transform duration-700">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                        <div class="absolute bottom-4 left-4">
+                            <h3 class="text-2xl font-bold">Lúcia "Dot" Santos</h3>
+                            <p class="text-accent">Pontilhismo & Aquarela</p>
+                        </div>
+                    </div>
+                    <p class="text-text-muted mb-4">
+                        Especialista em pontilhismo e técnicas de aquarela. Cria peças delicadas e cheias de movimento
+                        que parecem pinturas vivas.
+                    </p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1 bg-secondary rounded-full text-sm">6 anos exp.</span>
+                        <span class="px-3 py-1 bg-secondary rounded-full text-sm">Pontilhismo</span>
+                        <span class="px-3 py-1 bg-secondary rounded-full text-sm">Aquarela</span>
+                    </div>
+                    <div class="mt-6 flex items-center justify-between">
+                        <a href="#contact" class="text-accent hover:text-accent-light transition-colors">
+                            <i class="fas fa-calendar-alt mr-2"></i>Agendar
+                        </a>
+                        <div class="flex space-x-3">
+                            <a href="#" class="text-text-muted hover:text-accent transition-colors">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <a href="#" class="text-text-muted hover:text-accent transition-colors">
+                                <i class="fab fa-behance"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center mt-12">
+                <a href="#contact"
+                    class="inline-flex items-center text-accent hover:text-accent-light transition-colors">
+                    <span>Ver todos os artistas</span>
+                    <i class="fas fa-arrow-right ml-2"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="py-20 bg-primary relative overflow-hidden reveal">
+        <div class="absolute inset-0 bg-gradient-to-b from-transparent via-primary/50 to-primary"></div>
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center mb-16">
+                <div class="inline-flex items-center space-x-2 mb-4">
+                    <div class="w-12 h-px bg-gradient-to-r from-transparent via-accent to-transparent"></div>
+                    <span class="text-accent uppercase tracking-widest text-sm">Nosso Trabalho</span>
+                    <div class="w-12 h-px bg-gradient-to-r from-transparent via-accent to-transparent"></div>
+                </div>
+                <h2 class="text-4xl md:text-5xl font-bold mb-6 elegant-font">
+                    Galeria de <span class="gradient-text">Artes na Pele</span>
+                </h2>
+                <p class="max-w-2xl mx-auto text-text-muted text-lg">
+                    Cada tatuagem conta uma história única. Explore nosso portfólio de trabalhos realizados.
+                </p>
+            </div>
+
+            <!-- Filter Buttons -->
+            <div class="flex flex-wrap justify-center gap-3 mb-12">
+                <button
+                    class="filter-btn px-6 py-3 rounded-full bg-gradient-to-r from-accent to-accent-light text-primary font-bold transition-all duration-300 hover-lift active"
+                    data-filter="all">
+                    <i class="fas fa-layer-group mr-2"></i>Todos
+                </button>
+                <button
+                    class="filter-btn px-6 py-3 rounded-full bg-secondary hover:bg-accent/10 border border-white/10 hover:border-accent/30 text-white transition-all duration-300 hover-lift"
+                    data-filter="realism">
+                    <i class="fas fa-eye mr-2"></i>Realismo
+                </button>
+                <button
+                    class="filter-btn px-6 py-3 rounded-full bg-secondary hover:bg-accent/10 border border-white/10 hover:border-accent/30 text-white transition-all duration-300 hover-lift"
+                    data-filter="tribal">
+                    <i class="fas fa-drafting-compass mr-2"></i>Tribal
+                </button>
+                <button
+                    class="filter-btn px-6 py-3 rounded-full bg-secondary hover:bg-accent/10 border border-white/10 hover:border-accent/30 text-white transition-all duration-300 hover-lift"
+                    data-filter="dotwork">
+                    <i class="fas fa-circle-notch mr-2"></i>Pontilhismo
+                </button>
+                <button
+                    class="filter-btn px-6 py-3 rounded-full bg-secondary hover:bg-accent/10 border border-white/10 hover:border-accent/30 text-white transition-all duration-300 hover-lift"
+                    data-filter="watercolor">
+                    <i class="fas fa-paint-brush mr-2"></i>Aquarela
+                </button>
+            </div>
+
+            <!-- Gallery Grid -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 gallery-container">
+                <!-- Gallery items will be populated by JavaScript -->
+            </div>
+
+            <!-- Loading State -->
+            <div id="gallery-loading" class="text-center py-12">
+                <div class="inline-block animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-accent mb-4">
+                </div>
+                <p class="text-text-muted">Carregando galeria...</p>
+            </div>
+
+            <!-- Empty State -->
+            <div id="gallery-empty" class="hidden text-center py-12">
+                <div class="w-24 h-24 mx-auto mb-6 bg-secondary/50 rounded-full flex items-center justify-center">
+                    <i class="fas fa-images text-3xl text-accent"></i>
+                </div>
+                <h3 class="text-xl font-bold mb-2">Nenhuma tatuagem encontrada</h3>
+                <p class="text-text-muted mb-6">Tente selecionar outra categoria</p>
+                <button
+                    class="filter-btn px-6 py-3 rounded-full bg-gradient-to-r from-accent to-accent-light text-primary font-bold transition-all duration-300 hover-lift"
+                    data-filter="all">
+                    Mostrar todas
+                </button>
+            </div>
+
+            <div class="text-center mt-12">
+                <a href="https://www.instagram.com/lucas.fullstack/" target="_blank"
+                    class="inline-flex items-center justify-center bg-secondary hover:bg-secondary/80 border border-white/10 hover:border-accent/30 text-white font-bold py-3 px-8 rounded-full transition-all duration-300 hover-lift group">
+                    <i class="fab fa-instagram mr-3 text-accent group-hover:scale-110 transition-transform"></i>
+                    Ver mais no Instagram
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-20 bg-gradient-to-b from-secondary to-primary relative overflow-hidden reveal">
+        <div class="absolute top-0 left-0 w-96 h-96 bg-gradient-to-br from-accent/5 to-light/5 rounded-full blur-3xl">
+        </div>
+        <div
+            class="absolute bottom-0 right-0 w-64 h-64 bg-gradient-to-br from-light/5 to-accent/5 rounded-full blur-3xl">
+        </div>
+
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center mb-16">
+                <div class="inline-flex items-center space-x-2 mb-4">
+                    <div class="w-12 h-px bg-gradient-to-r from-transparent via-accent to-transparent"></div>
+                    <span class="text-accent uppercase tracking-widest text-sm">O que Oferecemos</span>
+                    <div class="w-12 h-px bg-gradient-to-r from-transparent via-accent to-transparent"></div>
+                </div>
+                <h2 class="text-4xl md:text-5xl font-bold mb-6 elegant-font">
+                    Nossos <span class="gradient-text">Serviços</span>
+                </h2>
+                <p class="max-w-2xl mx-auto text-text-muted text-lg">
+                    Serviços completos para todas as suas necessidades de body art, desde a primeira tatuagem até
+                    correções.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Service 1 -->
+                <div class="service-card rounded-2xl p-8 text-center">
+                    <div
+                        class="inline-flex items-center justify-center w-20 h-20 bg-gradient-to-br from-accent/10 to-light/10 rounded-2xl mb-6">
+                        <i class="fas fa-paint-brush text-3xl service-icon"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">Tatuagem Personalizada</h3>
+                    <p class="text-text-muted mb-6">
+                        Crie uma peça única do zero com nossos artistas. Desenvolvemos seu conceito do esboço até a arte
+                        final.
+                    </p>
+                    <div class="flex items-center justify-center text-accent">
+                        <span class="font-bold text-xl mr-2">A partir de R$ 300</span>
+                        <i class="fas fa-arrow-right transform group-hover:translate-x-2 transition-transform"></i>
+                    </div>
+                    <div class="mt-6">
+                        <a href="#contact"
+                            class="inline-block px-6 py-2 bg-secondary hover:bg-accent/10 rounded-full text-sm transition-colors">
+                            Agendar Consulta
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Service 2 -->
+                <div class="service-card rounded-2xl p-8 text-center">
+                    <div
+                        class="inline-flex items-center justify-center w-20 h-20 bg-gradient-to-br from-accent/10 to-light/10 rounded-2xl mb-6">
+                        <i class="fas fa-eraser text-3xl service-icon"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">Remoção a Laser</h3>
+                    <p class="text-text-muted mb-6">
+                        Tecnologia de ponta para remover tatuagens indesejadas de forma segura e eficiente.
+                    </p>
+                    <div class="flex items-center justify-center text-accent">
+                        <span class="font-bold text-xl mr-2">A partir de R$ 500</span>
+                        <i class="fas fa-arrow-right transform group-hover:translate-x-2 transition-transform"></i>
+                    </div>
+                    <div class="mt-6">
+                        <a href="#contact"
+                            class="inline-block px-6 py-2 bg-secondary hover:bg-accent/10 rounded-full text-sm transition-colors">
+                            Agendar Sessão
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Service 3 -->
+                <div class="service-card rounded-2xl p-8 text-center">
+                    <div
+                        class="inline-flex items-center justify-center w-20 h-20 bg-gradient-to-br from-accent/10 to-light/10 rounded-2xl mb-6">
+                        <i class="fas fa-magic text-3xl service-icon"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">Cover-up</h3>
+                    <p class="text-text-muted mb-6">
+                        Transforme tatuagens antigas em novas obras de arte. Escondemos imperfeições com designs
+                        criativos.
+                    </p>
+                    <div class="flex items-center justify-center text-accent">
+                        <span class="font-bold text-xl mr-2">A partir de R$ 400</span>
+                        <i class="fas fa-arrow-right transform group-hover:translate-x-2 transition-transform"></i>
+                    </div>
+                    <div class="mt-6">
+                        <a href="#contact"
+                            class="inline-block px-6 py-2 bg-secondary hover:bg-accent/10 rounded-full text-sm transition-colors">
+                            Agendar Consulta
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Special Offer -->
+            <div class="mt-16 relative">
+                <div
+                    class="absolute inset-0 bg-gradient-to-r from-accent via-light to-accent rounded-2xl blur opacity-30">
+                </div>
+                <div
+                    class="relative bg-gradient-to-br from-primary to-secondary border border-white/10 rounded-2xl p-8 md:p-12">
+                    <div class="grid lg:grid-cols-2 gap-8 items-center">
+                        <div>
+                            <h3 class="text-3xl font-bold mb-4 elegant-font">Primeira Tatuagem?</h3>
+                            <p class="text-text-muted mb-6">
+                                Oferecemos um pacote especial para iniciantes que inclui consultoria gratuita, design
+                                personalizado e cuidados pós-tatuagem. Um artista dedicado irá guiá-lo em cada etapa do
+                                processo.
+                            </p>
+                            <div class="flex items-center space-x-4">
+                                <a href="#contact"
+                                    class="bg-gradient-to-r from-accent to-accent-light text-primary font-bold py-3 px-8 rounded-full hover-lift transition-all duration-300">
+                                    Saiba Mais
+                                </a>
+                                <a href="#" class="text-accent hover:text-accent-light transition-colors">
+                                    Ver depoimentos <i class="fas fa-arrow-right ml-2"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="text-center">
+                            <div class="inline-flex flex-col items-center p-6 bg-secondary/50 rounded-2xl">
+                                <div class="text-5xl font-bold text-accent mb-2">30%</div>
+                                <div class="text-lg">de desconto na primeira tatuagem</div>
+                                <div class="text-sm text-text-muted mt-2">*Consulte condições</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="py-20 bg-primary relative overflow-hidden reveal">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <div class="inline-flex items-center space-x-2 mb-4">
+                    <div class="w-12 h-px bg-gradient-to-r from-transparent via-accent to-transparent"></div>
+                    <span class="text-accent uppercase tracking-widest text-sm">Depoimentos</span>
+                    <div class="w-12 h-px bg-gradient-to-r from-transparent via-accent to-transparent"></div>
+                </div>
+                <h2 class="text-4xl md:text-5xl font-bold mb-6 elegant-font">
+                    O que dizem <span class="gradient-text">nossos clientes</span>
+                </h2>
+                <p class="max-w-2xl mx-auto text-text-muted text-lg">
+                    A satisfação dos nossos clientes é nossa maior motivação.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Testimonial 1 -->
+                <div class="testimonial-card rounded-2xl p-8 relative">
+                    <div
+                        class="absolute -top-3 -left-3 w-12 h-12 bg-gradient-to-br from-accent to-light rounded-full flex items-center justify-center">
+                        <i class="fas fa-quote-left text-primary"></i>
+                    </div>
+                    <div class="flex items-center mb-6">
+                        <div class="flex -space-x-2">
+                            <div class="w-12 h-12 rounded-full border-2 border-primary overflow-hidden">
+                                <img src="https://randomuser.me/api/portraits/women/32.jpg" alt="Mariana"
+                                    class="w-full h-full object-cover">
+                            </div>
+                            <div
+                                class="w-12 h-12 rounded-full border-2 border-primary overflow-hidden bg-secondary flex items-center justify-center">
+                                <i class="fas fa-star text-accent"></i>
+                            </div>
+                        </div>
+                        <div class="ml-4">
+                            <h4 class="font-bold text-lg">Mariana Costa</h4>
+                            <p class="text-accent text-sm">Realismo no braço</p>
+                        </div>
+                    </div>
+                    <p class="text-text-muted italic mb-6">
+                        "A Ana fez um retrato incrível do meu pai. O nível de detalhe é impressionante! O estúdio é
+                        impecável e todo o processo foi muito profissional."
+                    </p>
+                    <div class="flex">
+                        <i class="fas fa-star text-accent"></i>
+                        <i class="fas fa-star text-accent"></i>
+                        <i class="fas fa-star text-accent"></i>
+                        <i class="fas fa-star text-accent"></i>
+                        <i class="fas fa-star text-accent"></i>
+                    </div>
+                </div>
+
+                <!-- Testimonial 2 -->
+                <div class="testimonial-card rounded-2xl p-8 relative">
+                    <div
+                        class="absolute -top-3 -left-3 w-12 h-12 bg-gradient-to-br from-accent to-light rounded-full flex items-center justify-center">
+                        <i class="fas fa-quote-left text-primary"></i>
+                    </div>
+                    <div class="flex items-center mb-6">
+                        <div class="flex -space-x-2">
+                            <div class="w-12 h-12 rounded-full border-2 border-primary overflow-hidden">
+                                <img src="https://randomuser.me/api/portraits/men/75.jpg" alt="Ricardo"
+                                    class="w-full h-full object-cover">
+                            </div>
+                            <div
+                                class="w-12 h-12 rounded-full border-2 border-primary overflow-hidden bg-secondary flex items-center justify-center">
+                                <i class="fas fa-star text-accent"></i>
+                            </div>
+                        </div>
+                        <div class="ml-4">
+                            <h4 class="font-bold text-lg">Ricardo Almeida</h4>
+                            <p class="text-accent text-sm">Tribal nas costas</p>
+                        </div>
+                    </div>
+                    <p class="text-text-muted italic mb-6">
+                        "Carlos fez a tatuagem tribal que sempre sonhei. O design é perfeito e o significado por trás de
+                        cada elemento tornou a experiência ainda mais especial. Recomendo!"
+                    </p>
+                    <div class="flex">
+                        <i class="fas fa-star text-accent"></i>
+                        <i class="fas fa-star text-accent"></i>
+                        <i class="fas fa-star text-accent"></i>
+                        <i class="fas fa-star text-accent"></i>
+                        <i class="fas fa-star text-accent"></i>
+                    </div>
+                </div>
+
+                <!-- Testimonial 3 -->
+                <div class="testimonial-card rounded-2xl p-8 relative">
+                    <div
+                        class="absolute -top-3 -left-3 w-12 h-12 bg-gradient-to-br from-accent to-light rounded-full flex items-center justify-center">
+                        <i class="fas fa-quote-left text-primary"></i>
+                    </div>
+                    <div class="flex items-center mb-6">
+                        <div class="flex -space-x-2">
+                            <div class="w-12 h-12 rounded-full border-2 border-primary overflow-hidden">
+                                <img src="https://randomuser.me/api/portraits/women/63.jpg" alt="Fernanda"
+                                    class="w-full h-full object-cover">
+                            </div>
+                            <div
+                                class="w-12 h-12 rounded-full border-2 border-primary overflow-hidden bg-secondary flex items-center justify-center">
+                                <i class="fas fa-star text-accent"></i>
+                            </div>
+                        </div>
+                        <div class="ml-4">
+                            <h4 class="font-bold text-lg">Fernanda Rocha</h4>
+                            <p class="text-accent text-sm">Pontilhismo no ombro</p>
+                        </div>
+                    </div>
+                    <p class="text-text-muted italic mb-6">
+                        "Lúcia transformou uma cicatriz antiga em uma obra de arte linda. O trabalho em pontilhismo
+                        ficou delicado e cheio de significado. O atendimento foi excelente!"
+                    </p>
+                    <div class="flex">
+                        <i class="fas fa-star text-accent"></i>
+                        <i class="fas fa-star text-accent"></i>
+                        <i class="fas fa-star text-accent"></i>
+                        <i class="fas fa-star text-accent"></i>
+                        <i class="fas fa-star text-accent"></i>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center mt-12">
+                <div class="inline-flex items-center space-x-4 text-text-muted">
+                    <i class="fas fa-heart text-accent"></i>
+                    <span>Mais de 500 avaliações 5 estrelas</span>
+                    <i class="fas fa-heart text-accent"></i>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-gradient-to-b from-secondary to-primary relative overflow-hidden reveal">
+        <div class="absolute top-0 left-0 w-full h-32 bg-gradient-to-b from-primary to-transparent"></div>
+
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-12">
+                <!-- Contact Form -->
+                <div>
+                    <div class="text-center lg:text-left mb-8">
+                        <div class="inline-flex items-center space-x-2 mb-4">
+                            <div class="w-8 h-px bg-gradient-to-r from-accent to-transparent"></div>
+                            <span class="text-accent uppercase tracking-widest text-sm">Agendamento</span>
+                        </div>
+                        <h2 class="text-4xl md:text-5xl font-bold mb-6 elegant-font">
+                            Agende sua <span class="gradient-text">Tatuagem</span>
+                        </h2>
+                        <p class="text-text-muted">
+                            Preencha o formulário para agendar sua consulta gratuita. Entraremos em contato em até 24
+                            horas.
+                        </p>
+                    </div>
+
+                    <form class="booking-form space-y-6">
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div>
+                                <label for="name" class="block mb-2 text-text-muted">Nome Completo *</label>
+                                <input type="text" id="name"
+                                    class="w-full px-4 py-3 rounded-xl text-white placeholder:text-text-muted/50"
+                                    placeholder="Seu nome" required>
+                            </div>
+                            <div>
+                                <label for="email" class="block mb-2 text-text-muted">Email *</label>
+                                <input type="email" id="email"
+                                    class="w-full px-4 py-3 rounded-xl text-white placeholder:text-text-muted/50"
+                                    placeholder="seu@email.com" required>
+                            </div>
+                        </div>
+
+                        <div>
+                            <label for="phone" class="block mb-2 text-text-muted">Telefone *</label>
+                            <input type="tel" id="phone"
+                                class="w-full px-4 py-3 rounded-xl text-black placeholder:text-text-muted/50"
+                                placeholder="(00) 00000-0000" required>
+                        </div>
+
+                        <div>
+                            <label for="artist" class="block mb-2 text-text-muted">
+                                Artista de Preferência
+                            </label>
+
+                            <select id="artist" class="w-full px-4 py-3 rounded-xl bg-secondary/50 text-white
+                                    focus:bg-secondary focus:text-white">
+                                <option value="" class="bg-secondary text-white">
+                                    Qualquer artista disponível
+                                </option>
+                                <option value="ana" class="bg-secondary text-white">
+                                    Ana "Raven" Silva
+                                </option>
+                                <option value="carlos" class="bg-secondary text-white">
+                                    Carlos "Koi" Mendes
+                                </option>
+                                <option value="lucia" class="bg-secondary text-white">
+                                    Lúcia "Dot" Santos
+                                </option>
+                            </select>
+                        </div>
+
+
+                        <div>
+                            <label for="style" class="block mb-2 text-text-muted">Estilo de Tatuagem *</label>
+                            <select id="style" class="w-full px-4 py-3 rounded-xl bg-secondary/50 text-white
+                                        focus:bg-secondary focus:text-white" required>
+                                <option value="" class="bg-secondary text-white">Selecione um estilo</option>
+                                <option value="realism" class="bg-secondary text-white">Realismo</option>
+                                <option value="tribal" class="bg-secondary text-white">Tribal/Maori</option>
+                                <option value="dotwork" class="bg-secondary text-white">Pontilhismo</option>
+                                <option value="watercolor" class="bg-secondary text-white">Aquarela</option>
+                                <option value="traditional" class="bg-secondary text-white">Tradicional</option>
+                                <option value="other" class="bg-secondary text-white">Outro</option>
+                            </select>
+                        </div>
+
+                        <div>
+                            <label for="message" class="block mb-2 text-text-muted">Descreva sua ideia *</label>
+                            <textarea id="message" rows="4"
+                                class="w-full px-4 py-3 rounded-xl text-white placeholder:text-text-muted/50"
+                                placeholder="Descreva sua ideia de tatuagem, tamanho, local no corpo, referências, etc..."
+                                required></textarea>
+                        </div>
+
+                        <div>
+                            <label class="flex items-center space-x-3">
+                                <input type="checkbox"
+                                    class="w-4 h-4 rounded bg-secondary/50 border-white/20 text-accent" required>
+                                <span class="text-sm text-text-muted">Li e aceito a <a href="#"
+                                        class="text-accent hover:text-accent-light">Política de Privacidade</a></span>
+                            </label>
+                        </div>
+
+                        <button type="submit"
+                            class="w-full bg-gradient-to-r from-accent to-accent-light text-primary font-bold py-4 px-8 rounded-xl hover-lift transition-all duration-300 transform hover:scale-105">
+                            <i class="fas fa-paper-plane mr-2"></i>Enviar Agendamento
+                        </button>
+                    </form>
+                </div>
+
+                <!-- Contact Info -->
+                <div>
+                    <div
+                        class="bg-gradient-to-br from-primary to-secondary border border-white/10 rounded-2xl p-8 h-full">
+                        <h3 class="text-2xl font-bold mb-6 elegant-font">Nossas <span
+                                class="gradient-text">Informações</span></h3>
+
+                        <div class="space-y-8">
+                            <!-- Address -->
+                            <div class="flex items-start space-x-4 group cursor-pointer">
+                                <div class="flex-shrink-0">
+                                    <div
+                                        class="w-12 h-12 bg-gradient-to-br from-accent/10 to-light/10 rounded-xl flex items-center justify-center group-hover:from-accent/20 group-hover:to-light/20 transition-all">
+                                        <i class="fas fa-map-marker-alt text-accent text-xl"></i>
+                                    </div>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold mb-2">Endereço</h4>
+                                    <p class="text-text-muted">Rua da Tinta, 123 - Centro</p>
+                                    <p class="text-text-muted">São Paulo - SP, 01001-000</p>
+                                </div>
+                            </div>
+
+                            <!-- Hours -->
+                            <div class="flex items-start space-x-4 group cursor-pointer">
+                                <div class="flex-shrink-0">
+                                    <div
+                                        class="w-12 h-12 bg-gradient-to-br from-accent/10 to-light/10 rounded-xl flex items-center justify-center group-hover:from-accent/20 group-hover:to-light/20 transition-all">
+                                        <i class="fas fa-clock text-accent text-xl"></i>
+                                    </div>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold mb-2">Horário de Funcionamento</h4>
+                                    <p class="text-text-muted">Segunda a Sexta: 10h - 20h</p>
+                                    <p class="text-text-muted">Sábado: 10h - 18h</p>
+                                    <p class="text-text-muted">Domingo: Fechado</p>
+                                </div>
+                            </div>
+
+                            <!-- Contact -->
+                            <div class="flex items-start space-x-4 group cursor-pointer">
+                                <div class="flex-shrink-0">
+                                    <div
+                                        class="w-12 h-12 bg-gradient-to-br from-accent/10 to-light/10 rounded-xl flex items-center justify-center group-hover:from-accent/20 group-hover:to-light/20 transition-all">
+                                        <i class="fas fa-phone-alt text-accent text-xl"></i>
+                                    </div>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold mb-2">Telefone</h4>
+                                    <p class="text-text-muted">(11) 98765-4321</p>
+                                    <p class="text-text-muted">(11) 1234-5678</p>
+                                </div>
+                            </div>
+
+                            <!-- Email -->
+                            <div class="flex items-start space-x-4 group cursor-pointer">
+                                <div class="flex-shrink-0">
+                                    <div
+                                        class="w-12 h-12 bg-gradient-to-br from-accent/10 to-light/10 rounded-xl flex items-center justify-center group-hover:from-accent/20 group-hover:to-light/20 transition-all">
+                                        <i class="fas fa-envelope text-accent text-xl"></i>
+                                    </div>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold mb-2">Email</h4>
+                                    <p class="text-text-muted">contato@inksoul.com.br</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Social Media -->
+                        <div class="mt-12 pt-8 border-t border-white/10">
+                            <h4 class="font-bold mb-6">Siga-nos nas redes sociais</h4>
+                            <div class="flex space-x-4">
+                                <a href="#"
+                                    class="w-12 h-12 bg-gradient-to-br from-accent/10 to-light/10 rounded-xl flex items-center justify-center hover:from-accent/20 hover:to-light/20 transition-all group">
+                                    <i class="fab fa-instagram text-xl group-hover:text-accent transition-colors"></i>
+                                </a>
+                                <a href="#"
+                                    class="w-12 h-12 bg-gradient-to-br from-accent/10 to-light/10 rounded-xl flex items-center justify-center hover:from-accent/20 hover:to-light/20 transition-all group">
+                                    <i class="fab fa-facebook-f text-xl group-hover:text-accent transition-colors"></i>
+                                </a>
+                                <a href="#"
+                                    class="w-12 h-12 bg-gradient-to-br from-accent/10 to-light/10 rounded-xl flex items-center justify-center hover:from-accent/20 hover:to-light/20 transition-all group">
+                                    <i class="fab fa-tiktok text-xl group-hover:text-accent transition-colors"></i>
+                                </a>
+                                <a href="#"
+                                    class="w-12 h-12 bg-gradient-to-br from-accent/10 to-light/10 rounded-xl flex items-center justify-center hover:from-accent/20 hover:to-light/20 transition-all group">
+                                    <i class="fab fa-youtube text-xl group-hover:text-accent transition-colors"></i>
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- FAQ -->
+                        <div class="mt-12">
+                            <h4 class="font-bold mb-6">Dúvidas Frequentes</h4>
+                            <div class="space-y-4">
+                                <!-- FAQ Item 1 -->
+                                <div class="faq-item">
+                                    <button
+                                        class="faq-btn w-full text-left flex justify-between items-center py-3 border-b border-white/10">
+                                        <span class="font-medium">Quanto custa uma tatuagem?</span>
+                                        <i
+                                            class="fas fa-chevron-down text-accent transition-transform duration-300"></i>
+                                    </button>
+                                    <div class="faq-content hidden mt-2 text-text-muted text-sm">
+                                        O valor varia conforme tamanho, complexidade, local do corpo e tempo necessário.
+                                        Realizamos consultas gratuitas para orçamento personalizado.
+                                    </div>
+                                </div>
+
+                                <!-- FAQ Item 2 -->
+                                <div class="faq-item">
+                                    <button
+                                        class="faq-btn w-full text-left flex justify-between items-center py-3 border-b border-white/10">
+                                        <span class="font-medium">Quais os cuidados pós-tatuagem?</span>
+                                        <i
+                                            class="fas fa-chevron-down text-accent transition-transform duration-300"></i>
+                                    </button>
+                                    <div class="faq-content hidden mt-2 text-text-muted text-sm">
+                                        Mantenha limpo com sabão neutro, hidrate com pomada específica, evite sol,
+                                        piscina e mar por 15 dias. Fornecemos instruções detalhadas após a sessão.
+                                    </div>
+                                </div>
+
+                                <!-- FAQ Item 3 -->
+                                <div class="faq-item">
+                                    <button
+                                        class="faq-btn w-full text-left flex justify-between items-center py-3 border-b border-white/10">
+                                        <span class="font-medium">É possível usar anestesia?</span>
+                                        <i
+                                            class="fas fa-chevron-down text-accent transition-transform duration-300"></i>
+                                    </button>
+                                    <div class="faq-content hidden mt-2 text-text-muted text-sm">
+                                        Usamos creme anestésico tópico para áreas mais sensíveis. A aplicação é feita 45
+                                        minutos antes da sessão para maior conforto.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-primary border-t border-white/10 py-12">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
+                <!-- Logo & Description -->
+                <div>
+                    <div class="flex items-center space-x-3 mb-4">
+                        <div
+                            class="w-10 h-10 bg-gradient-to-br from-accent to-light rounded-full flex items-center justify-center">
+                            <i class="fas fa-spa text-primary"></i>
+                        </div>
+                        <span class="tattoo-font text-2xl elegant-font">INK SOUL</span>
+                    </div>
+                    <p class="text-text-muted">
+                        Transformando histórias em arte desde 2008. Excelência, criatividade e segurança em cada traço.
+                    </p>
+                </div>
+
+                <!-- Quick Links -->
+                <div>
+                    <h4 class="font-bold text-lg mb-4">Links Rápidos</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#home" class="text-text-muted hover:text-accent transition-colors">Home</a></li>
+                        <li><a href="#artists" class="text-text-muted hover:text-accent transition-colors">Artistas</a>
+                        </li>
+                        <li><a href="#gallery" class="text-text-muted hover:text-accent transition-colors">Galeria</a>
+                        </li>
+                        <li><a href="#services" class="text-text-muted hover:text-accent transition-colors">Serviços</a>
+                        </li>
+                        <li><a href="#contact" class="text-text-muted hover:text-accent transition-colors">Contato</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Services -->
+                <div>
+                    <h4 class="font-bold text-lg mb-4">Serviços</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#services" class="text-text-muted hover:text-accent transition-colors">Tatuagem
+                                Personalizada</a></li>
+                        <li><a href="#services" class="text-text-muted hover:text-accent transition-colors">Remoção a
+                                Laser</a></li>
+                        <li><a href="#services" class="text-text-muted hover:text-accent transition-colors">Cover-up</a>
+                        </li>
+                        <li><a href="#services"
+                                class="text-text-muted hover:text-accent transition-colors">Consultoria</a></li>
+                    </ul>
+                </div>
+
+                <!-- Newsletter -->
+                <div>
+                    <h4 class="font-bold text-lg mb-4">Newsletter</h4>
+                    <p class="text-text-muted mb-4">Receba novidades e promoções especiais.</p>
+                    <form class="space-y-3">
+                        <input type="email" placeholder="Seu email"
+                            class="w-full px-4 py-3 rounded-xl bg-secondary/50 border border-white/10 text-white placeholder:text-text-muted/50">
+                        <button type="submit"
+                            class="w-full bg-gradient-to-r from-accent to-accent-light text-primary font-bold py-3 px-6 rounded-xl hover-lift transition-all">
+                            Inscrever
+                        </button>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Copyright -->
+            <div class="border-t border-white/10 pt-8 text-center">
+                <div class="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
+                    <p class="text-text-muted text-sm">
+                        © 2024 Ink Soul Tattoo Studio. Todos os direitos reservados.
+                    </p>
+                    <div class="flex items-center space-x-6">
+                        <a href="#" class="text-text-muted hover:text-accent text-sm transition-colors">Política de
+                            Privacidade</a>
+                        <a href="#" class="text-text-muted hover:text-accent text-sm transition-colors">Termos de
+                            Uso</a>
+                    </div>
+                </div>
+                <div class="mt-4 text-text-muted text-sm">
+                    <p>Desenvolvido com <i class="fas fa-heart text-accent mx-1"></i> para amantes da arte corporal</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top"
+        class="fixed bottom-8 right-8 bg-gradient-to-br from-accent to-light text-primary w-12 h-12 rounded-full flex items-center justify-center shadow-xl hover-lift transition-all opacity-0 invisible hover:shadow-2xl">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- Booking Success Modal -->
+    <div id="success-modal"
+        class="fixed inset-0 bg-black/80 backdrop-blur-sm flex items-center justify-center z-50 hidden">
+        <div
+            class="bg-gradient-to-br from-primary to-secondary border border-white/10 rounded-2xl p-8 max-w-md w-full mx-4 relative">
+            <button id="close-modal" class="absolute top-4 right-4 text-text-muted hover:text-white">
+                <i class="fas fa-times text-xl"></i>
+            </button>
+            <div class="text-center">
+                <div
+                    class="inline-flex items-center justify-center w-20 h-20 bg-gradient-to-br from-accent/20 to-light/20 rounded-full mb-6">
+                    <i class="fas fa-check text-3xl text-accent"></i>
+                </div>
+                <h3 class="text-2xl font-bold mb-2 elegant-font">Agendamento Enviado!</h3>
+                <p class="text-text-muted mb-6">
+                    Recebemos sua solicitação. Entraremos em contato em até 24 horas para confirmar os detalhes.
+                </p>
+                <button id="modal-ok"
+                    class="bg-gradient-to-r from-accent to-accent-light text-primary font-bold py-3 px-8 rounded-xl hover-lift transition-all">
+                    Entendido
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="scripts.js"></script>
+</body>
+
+</html>

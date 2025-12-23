@@ -1,0 +1,41 @@
+# =====================
+# Environment variables
+# =====================
+.env
+backend/.env
+.env
+backend/.env
+# =====================
+# Node / Frontend
+# =====================
+node_modules/
+dist/
+build/
+
+# =====================
+# Python / Backend
+# =====================
+__pycache__/
+*.pyc
+venv/
+.env.local
+
+# =====================
+# OS / Editor
+# =====================
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# =====================
+# Logs
+# =====================
+*.log
+
+# Images / Assets
+front-end/imgs/
+*.jpg
+*.jpeg
+*.png
+*.webp
